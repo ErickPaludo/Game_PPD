@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/0e84b8b0b6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Preda Papel Tesoura</title>
+</head>
+
+<body>
+    <div id="placar">
+        <div id="versus">
+
+            <div id="plac_b">
+                <p id="name_b">Bot</p>
+                <p id="cnt_b">0</p>
+                <p id="bot"></p>
+            </div>
+            <div id="plac_u">
+            <p id="name_u">User</p>
+            <p id="cnt_u">0</p>
+            <p id="user"></p>
+            </div>
+        </div>
+
+        <div id="box_vencedor">
+            <p id="ganhador"></p>
+        </div>
+    </div>
+<div id="jogada">
+        <p id="result"></p>
+</div>
+
+    <div id="container">
+
+        <p id="pedra" onclick="pedra()">
+            <i class="fa-solid fa-hand-back-fist"></i>
+        </p>
+        <p id="papel" onclick="papel()"><i class="fa-solid fa-hand"></i></p>
+        <p id="tesoura" onclick="tesoura()"><i class="fa-solid fa-hand-scissors fa-rotate-90"></i></p>
+
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
