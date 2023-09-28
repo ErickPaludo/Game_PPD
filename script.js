@@ -107,20 +107,24 @@ function cnt_total(){
 }
 function verificador_final(){
     if(contador_total <= contador_jgm){
-        resp()   
+        resp() 
+        if(contador_total === contador_jgm) {
+            
+            if(contador_u > contador_b){
+                ganhador.innerHTML = "Você Ganhou!";
+                box_vencedor.style.background = "rgb(85, 176, 108)";
+                }
+                else if(contador_u < contador_b){
+                    ganhador.innerHTML = "Você Perdeu!";
+                    box_vencedor.style.background = "red";
+                }
+                else{
+                    ganhador.innerHTML = "Vocês Empataram!";
+                    box_vencedor.style.background = "rgb(251, 150, 64)";
+                }
+        }
     }
     else{
-        if(contador_u > contador_b){
-        ganhador.innerHTML = "Você Ganhou!";
-        box_vencedor.style.background = "rgb(85, 176, 108)";
-        }
-        else if(contador_u < contador_b){
-            ganhador.innerHTML = "Você Perdeu!";
-            box_vencedor.style.background = "red";
-        }
-        else{
-            ganhador.innerHTML = "Vocês Empataram!";
-            box_vencedor.style.background = "rgb(251, 150, 64)";
-        }
+
     }
 }
