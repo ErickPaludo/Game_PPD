@@ -19,13 +19,14 @@
                 <p id="cnt_b">0</p>
                 <p id="bot"></p>
             </div>
+            
             <div id="plac_u">
             <p id="name_u">User</p>
             <p id="cnt_u">0</p>
             <p id="user"></p>
             </div>
         </div>
-
+        <div id="plac_empt"></div>
         <div id="box_vencedor">
             <p id="ganhador"></p>
         </div>
@@ -43,9 +44,9 @@
         <p id="tesoura" onclick="tesoura()"><i class="fa-solid fa-hand-scissors fa-rotate-90"></i></p>
     </div>
     <div id="box_limite">
-        <div id="sub"> - </div>
-        <div id="number"><p id="digt">5</div>
-        <div id="sum"> + </div>
+        <div id="sub" onclick="LevelDown()"> - </div>
+        <div id="number"><p id="digt"></div>
+        <div id="sum" onclick="LevelUp()"> + </div>
     </div>
 </body>
 <script src="script.js"></script>

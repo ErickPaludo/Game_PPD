@@ -3,9 +3,11 @@ var bot = document.querySelector("#bot");
 var result_ = document.querySelector("#result");
 var placar_b = document.querySelector("#cnt_b");
 var placar_u = document.querySelector("#cnt_u");
+var box_impt = document.querySelector("#plac_empt");
 var ganhador = document.querySelector("#ganhador");
 var box_v = document.querySelector("#box_vencedor");
-var receptor_b, recptor_u, contador_b = 0, contador_u = 0;
+var jog_max = document.querySelector("#digt");
+var receptor_b, recptor_u, contador_e = 0,contador_b = 0, contador_u = 0, contador_jgm = 0, contador_total = 0;
 function resp(){
     const numeroAleatorio = Math.floor(Math.random() * 3);
     receptor_b = numeroAleatorio;
@@ -28,9 +30,9 @@ function resp(){
     else{
         user.innerHTML = "✌🏻";
     }
-    
     placar_b.innerHTML =  contador_b;
     placar_u.innerHTML =  contador_u;
+    cnt_total();
 }
 
 function resultado(){
@@ -38,7 +40,10 @@ const comp_u = recptor_u;
 const comp_b = receptor_b;
 if(comp_u === comp_b){
     ///empate
+    contador_e++;
+    box_impt.innerHTML = contador_e;
     ganhador.innerHTML = "Empate";
+    box_impt.style.background = "rgb(251, 150, 64)";
     box_vencedor.style.background = "rgb(251, 150, 64)";
 }
 else if(comp_u === 0 && comp_b === 1){
@@ -74,13 +79,37 @@ else{
 }
 function pedra(){
     recptor_u = 0;
-    resp();
+  verificador_final();
 }
 function papel(){
     recptor_u = 1;
-    resp();
+    verificador_final();
 }
 function tesoura(){
     recptor_u = 2;
-    resp();
+    verificador_final();
+}
+function LevelUp(){
+    contador_jgm++;
+    jog_max.innerHTML = contador_jgm
+}
+function LevelDown(){
+    if(contador_jgm > 0){ 
+        contador_jgm--;
+    }
+    jog_max.innerHTML = contador_jgm
+}
+function cnt_total(){
+    contador_total= contador_total + contador_b + contador_u;
+}
+function verificador_final(){
+    if(contador_total === contador_jgm){
+        
+        bot.innerHTML = "acabou";
+        user.innerHTML = "acabou";
+    }
+    else{ 
+        resp()
+    }
+    
 }
