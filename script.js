@@ -79,14 +79,17 @@ else{
 }
 function pedra(){
     recptor_u = 0;
+    contador_total++;
   verificador_final();
 }
 function papel(){
     recptor_u = 1;
+    contador_total++;
     verificador_final();
 }
 function tesoura(){
     recptor_u = 2;
+    contador_total++;
     verificador_final();
 }
 function LevelUp(){
@@ -100,16 +103,24 @@ function LevelDown(){
     jog_max.innerHTML = contador_jgm
 }
 function cnt_total(){
-    contador_total= contador_total + contador_b + contador_u;
+
 }
 function verificador_final(){
-    if(contador_total === contador_jgm){
-        
-        bot.innerHTML = "acabou";
-        user.innerHTML = "acabou";
+    if(contador_total <= contador_jgm){
+        resp()   
     }
-    else{ 
-        resp()
+    else{
+        if(contador_u > contador_b){
+        ganhador.innerHTML = "Você Ganhou!";
+        box_vencedor.style.background = "rgb(85, 176, 108)";
+        }
+        else if(contador_u < contador_b){
+            ganhador.innerHTML = "Você Perdeu!";
+            box_vencedor.style.background = "red";
+        }
+        else{
+            ganhador.innerHTML = "Vocês Empataram!";
+            box_vencedor.style.background = "rgb(251, 150, 64)";
+        }
     }
-    
 }
