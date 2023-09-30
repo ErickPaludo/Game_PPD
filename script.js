@@ -7,7 +7,7 @@ var box_impt = document.querySelector("#plac_empt");
 var ganhador = document.querySelector("#ganhador");
 var box_v = document.querySelector("#box_vencedor");
 var jog_max = document.querySelector("#digt");
-var receptor_b, recptor_u, contador_e = 0,contador_b = 0, contador_u = 0, contador_jgm = 0, contador_total = 0;
+var receptor_b, recptor_u, contador_e = 0,contador_b = 0, contador_u = 0, contador_jgm = 3, contador_total = 0;
 function resp(){
     const numeroAleatorio = Math.floor(Math.random() * 3);
     receptor_b = numeroAleatorio;
@@ -97,7 +97,7 @@ function LevelUp(){
     jog_max.innerHTML = contador_jgm
 }
 function LevelDown(){
-    if(contador_jgm > 0){ 
+    if(contador_jgm > 1){ 
         contador_jgm--;
     }
     jog_max.innerHTML = contador_jgm
